@@ -13,10 +13,12 @@
     </head>
     <body>
         <%
-            String result = (String)request.getAttribute("Area");
+            String result ="";
+            Object res = request.getAttribute("Area");
+            result = res.toString();
         %>
         
-        <p>Your Answer is: <% out.print(result); %></p>
+        <p>Your Answer is: <%= result %></p>
         
         <p><a href="index.html">Back To Index Page</a></p>
     </body>

@@ -12,16 +12,16 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.RectangleArea;
+import model.CircleArea;
 
 /**
  *
  * @author benja_000
  */
-@WebServlet(name = "AreaRectangleController", urlPatterns = {"/RectControl"})
-public class AreaRectangleController extends HttpServlet {
-
-    private final static String RESULT_PAGE = "/ResultPage.jsp";
+@WebServlet(name = "AreaCircleController", urlPatterns = {"/CirController"})
+public class AreaCircleController extends HttpServlet {
+    
+    private static final String RESULT_PAGE = "/ResultPage.jsp";
 
     /**
      * Processes requests for both HTTP
@@ -38,16 +38,15 @@ public class AreaRectangleController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String length = request.getParameter("length");
-            int len = Integer.valueOf(length);
-            String width = request.getParameter("width");
-            int wid = Integer.valueOf(width);
-            
-            RectangleArea ra = new RectangleArea();
-            
-            ra.findAreaOfRectangle(len, wid);
-            
-            request.setAttribute("Area", ra);
+
+            String rad = request.getParameter("radius");
+            double radius = Double.valueOf(rad);
+
+            CircleArea ca = new CircleArea();
+
+            ca.findAreaOfCircle(radius);
+
+            request.setAttribute("Area", ca);
 
             RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
             view.forward(request, response);
