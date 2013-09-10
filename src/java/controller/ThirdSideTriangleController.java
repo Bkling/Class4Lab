@@ -49,6 +49,7 @@ public class ThirdSideTriangleController extends HttpServlet {
             double answer = ts.findThirdSideOfTriangle(side1, side2);
 
             request.setAttribute("Area", answer);
+            request.setAttribute("ThirdSide", answer);
 
             RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
             view.forward(request, response);
