@@ -9,9 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Result Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            String result = (String)request.getAttribute("Area");
+        %>
+        
+        <p>Your Answer is: <% out.print(result); %></p>
+        
+        <p><a href="index.html">Back To Index Page</a></p>
     </body>
 </html>
