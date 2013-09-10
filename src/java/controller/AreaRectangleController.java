@@ -21,7 +21,8 @@ import model.RectangleArea;
 @WebServlet(name = "AreaRectangleController", urlPatterns = {"/RectControl"})
 public class AreaRectangleController extends HttpServlet {
 
-    private final static String RESULT_PAGE = "/ResultPage.jsp";
+    //private final static String RESULT_PAGE = "/ResultPage.jsp";
+    private static final String RESULT_PAGE = "/Form.jsp";
 
     /**
      * Processes requests for both HTTP
@@ -42,11 +43,11 @@ public class AreaRectangleController extends HttpServlet {
             int len = Integer.valueOf(length);
             String width = request.getParameter("width");
             int wid = Integer.valueOf(width);
-            
+
             RectangleArea ra = new RectangleArea();
-            
+
             Integer answer = ra.findAreaOfRectangle(len, wid);
-            
+
             request.setAttribute("Area", answer);
 
             RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);

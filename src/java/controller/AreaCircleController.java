@@ -20,8 +20,9 @@ import model.CircleArea;
  */
 @WebServlet(name = "AreaCircleController", urlPatterns = {"/CirController"})
 public class AreaCircleController extends HttpServlet {
-    
-    private static final String RESULT_PAGE = "/ResultPage.jsp";
+
+    //private static final String RESULT_PAGE = "/ResultPage.jsp";
+    private static final String RESULT_PAGE = "/Form.jsp";
 
     /**
      * Processes requests for both HTTP

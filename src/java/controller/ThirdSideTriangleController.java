@@ -21,7 +21,8 @@ import model.ThirdSide;
 @WebServlet(name = "ThirdSideTriangleController", urlPatterns = {"/ThirdSide"})
 public class ThirdSideTriangleController extends HttpServlet {
 
-    private static final String RESULT_PAGE = "/ResultPage.jsp";
+    //private static final String RESULT_PAGE = "/ResultPage.jsp";
+    private static final String RESULT_PAGE = "/Form.jsp";
 
     /**
      * Processes requests for both HTTP
