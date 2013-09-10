@@ -15,7 +15,9 @@
         <%
             String result ="";
             Object res = request.getAttribute("Area");
-            result = res.toString();
+            if(res != null) {
+                result = res.toString();
+            }
         %>
         
         <p>Your Answer is: <%= result %></p>

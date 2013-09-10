@@ -45,9 +45,9 @@ public class AreaRectangleController extends HttpServlet {
             
             RectangleArea ra = new RectangleArea();
             
-            ra.findAreaOfRectangle(len, wid);
+            Integer answer = ra.findAreaOfRectangle(len, wid);
             
-            request.setAttribute("Area", ra);
+            request.setAttribute("Area", answer);
 
             RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
             view.forward(request, response);

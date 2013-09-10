@@ -44,9 +44,9 @@ public class AreaCircleController extends HttpServlet {
 
             CircleArea ca = new CircleArea();
 
-            ca.findAreaOfCircle(radius);
+            Double answer = ca.findAreaOfCircle(radius);
 
-            request.setAttribute("Area", ca);
+            request.setAttribute("Area", answer);
 
             RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
             view.forward(request, response);
